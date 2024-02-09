@@ -241,3 +241,64 @@ input[type="password"] {
   width: 100%;
   overflow: hidden;
 }
+
+.about-container {
+  padding: 50px;
+  animation: fadeIn 1s ease;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.about-container {
+  padding: 50px;
+  animation: fadeIn 1s ease;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.about-content h2 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.about-content h3 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.benefits-list {
+  padding-left: 20px;
+}
+
+.benefits-list li {
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
