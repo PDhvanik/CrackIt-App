@@ -47,6 +47,7 @@ const Signup = () => {
          <Navbar />
          <div className="signup-container">
             <h2>SignUp</h2>
+            <hr />
             <form className="signup-form" onSubmit={handleSubmit}>
                <div className="form-group">
                   <label>Username:</label>

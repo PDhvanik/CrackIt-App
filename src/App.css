@@ -2,12 +2,17 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  background-color: #3b8beb;
+  height: 100vh;
+  font-family: 'Nunito', sans-serif;
 }
 
 .logo {
-  height: 80px;
-  width: 100px;
-  margin: 1vw;
+  height: 32px;
+  width: 120px;
+  margin-top: 18px;
+  margin-left: 8px;
+  mix-blend-mode: screen;
 
   @media only screen and (max-width: 1000px) {
     height: 60px;
@@ -18,9 +23,9 @@
 .nav-container {
   display: flex;
   justify-content: space-between;
-  margin-left: 2vw;
-  margin-right: 2vw;
   overflow: hidden;
+  z-index: -1;
+  height: 10vh;
 }
 
 .link-container {
@@ -29,18 +34,18 @@
   align-items: center;
   margin: 1.5vw;
   padding: 1vw;
-  background: #1111;
 }
 
 .nav-container a {
   font-size: 20px;
-  float: left;
   display: block;
-  color: black;
+  color: #e7e3d4;
   text-align: center;
   margin-left: 3vw;
-  margin-right: 3vw;
+  margin-top: -17px;
+  margin-right: 2vw;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 
   @media only screen and (max-width: 768px) {
     font-size: 2.5vw;
@@ -49,6 +54,11 @@
   @media only screen and (max-width: 1000px) {
     font-size: 2vw;
   }
+}
+
+.nav-container a:hover {
+  color: white;
+  text-shadow: 0px 7px 8px black;
 }
 
 .list-button {
@@ -115,26 +125,34 @@
   height: 50%;
 }
 
+
 .signup-container {
   max-width: 400px;
   margin: 6vw auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  border-radius: 8px;
+  background-color: #e7e3d4;
+  color: black;
 }
 
 .signup-container h2 {
-  font-size: 2vw;
-  margin-bottom: 30px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-decoration-line: underline;
+}
+
+.signup-container hr {
+  border: 1px solid black;
 }
 
 .signup-form {
-  margin-bottom: 20px;
+  margin-top: 2vh;
+  margin-bottom: 10px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 label {
@@ -159,16 +177,15 @@ input[type="password"] {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: none;
   border-radius: 5px;
-  background-color: #fafbfc;
+  background-color: #007bff;
   color: black;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 .submit-btn:hover,
 .google-signup-btn:hover {
+  color: #e7e3d4;
   background-color: #0056b3;
 }
 
@@ -178,6 +195,8 @@ input[type="password"] {
   margin: 6vw auto;
   padding: 20px;
   border: 1px solid #ccc;
+  background-color: #e7e3d4;
+  color: black;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -185,9 +204,16 @@ input[type="password"] {
 .login-container h2 {
   margin-bottom: 20px;
   font-size: 24px;
+  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.login-container hr {
+  border: 1px solid black;
 }
 
 .login-container form {
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
 }
@@ -200,7 +226,7 @@ input[type="password"] {
 .login-container input[type="password"] {
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #818181;
   border-radius: 3px;
   font-size: 16px;
 }
@@ -213,6 +239,7 @@ input[type="password"] {
   border-radius: 3px;
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .login-container button:hover {

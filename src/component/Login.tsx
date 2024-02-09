@@ -25,6 +25,7 @@ const Login = () => {
          <Navbar />
          <div className='login-container'>
             <h2>Login</h2>
+            <hr />
             <form onSubmit={handleSubmit}>
                <div>
                   <label htmlFor="email">Email:</label>
