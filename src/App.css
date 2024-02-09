@@ -67,7 +67,7 @@
   left: 20%;
   top: 10%;
   background-color: rgba(0, 0, 0, 0.9);
-  overflow-x: hidden;
+  overflow: hidden;
   transition: 0.5s;
 }
 
@@ -113,4 +113,131 @@
 
 .overlay.open {
   height: 50%;
+}
+
+.signup-container {
+  max-width: 400px;
+  margin: 6vw auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.signup-container h2 {
+  font-size: 2vw;
+  margin-bottom: 30px;
+}
+
+.signup-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submit-btn,
+.google-signup-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fafbfc;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover,
+.google-signup-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.login-container {
+  width: 300px;
+  margin: 6vw auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  margin-bottom: 10px;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.login-container button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-video {
+  position: absolute;
+  width: 30%;
+  height: 40%;
+  object-fit: cover;
+  mix-blend-mode: darken;
+}
+
+.source-display {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
