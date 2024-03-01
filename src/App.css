@@ -1,17 +1,71 @@
-#root {
+body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #3b8beb;
-  height: 100vh;
+  /* color: #ccc; */
+  /* position: relative; */
+  height: 300vh;
   font-family: 'Nunito', sans-serif;
+}
+
+/* .blurred-bg {
+  opacity: 0;
+  -webkit-filter: blur(20px) brightness(0.7);
+  -ms-filter: blur(20px) brightness(0.7);
+  -o-filter: blur(20px) brightness(0.7);
+  filter: blur(20px) brightness(0.7);
+} */
+
+.top-heading {
+  margin-top: 3vh;
+  font-size: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.main-heading {
+  font-size: 6rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.bottom-heading {
+  font-size: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.video-bg {
+  /* height: 100%; */
+  width: 100%;
+  animation: fadeIn 1s ease;
+}
+
+.video-container {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+}
+
+.video-bg-container {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.video-man {
+  height: 100%;
+  width: 100%;
+  /* position: fixed; */
+  -webkit-filter: blur(4px);
+  animation: fadeIn 1s ease;
 }
 
 .logo {
   height: 32px;
   width: 120px;
-  margin-top: 18px;
-  margin-left: 8px;
+  margin-top: 27px;
   mix-blend-mode: screen;
 
   @media only screen and (max-width: 1000px) {
@@ -22,10 +76,18 @@
 
 .nav-container {
   display: flex;
+  /* position: sticky; */
   justify-content: space-between;
+  background-color: #333;
+  opacity: 80%;
   overflow: hidden;
-  z-index: -1;
-  height: 10vh;
+  z-index: 1;
+  height: 60px;
+}
+
+.collab {
+  display: flex;
+
 }
 
 .link-container {
@@ -39,11 +101,11 @@
 .nav-container a {
   font-size: 20px;
   display: block;
-  color: #e7e3d4;
+  color: #edebeb;
   text-align: center;
-  margin-left: 3vw;
+  margin-left: 2.4vw;
   margin-top: -17px;
-  margin-right: 2vw;
+  margin-right: 1.6vw;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 
@@ -58,7 +120,7 @@
 
 .nav-container a:hover {
   color: white;
-  text-shadow: 0px 7px 8px black;
+  text-shadow: 0px 2px 3px white;
 }
 
 .list-button {
@@ -127,13 +189,18 @@
 
 
 .signup-container {
-  max-width: 400px;
+  width: 350px;
   margin: 6vw auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #e7e3d4;
-  color: black;
+  position: absolute;
+  left: 17vw;
+  top: 5vh;
+  border: 1px solid black;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+  animation: fadeIn 1s ease;
+  box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.1);
 }
 
 .signup-container h2 {
@@ -143,7 +210,7 @@
 }
 
 .signup-container hr {
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .signup-form {
@@ -175,11 +242,12 @@ input[type="password"] {
 .google-signup-btn {
   display: block;
   width: 100%;
+  margin-top: 3vh;
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
   background-color: #007bff;
-  color: black;
+  color: #fff;
   transition: all 0.2s ease-in-out;
 }
 
@@ -192,24 +260,28 @@ input[type="password"] {
 
 .login-container {
   width: 300px;
+  left: 20vw;
+  position: absolute;
   margin: 6vw auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #e7e3d4;
-  color: black;
+  padding: 22px;
+  border: 1px solid black;
+  background-color: #333;
+  color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+  box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.1);
 }
 
 .login-container h2 {
   margin-bottom: 20px;
-  font-size: 24px;
+  margin-top: 5px;
+  font-size: 25px;
   text-decoration: underline;
   text-decoration-line: underline;
 }
 
 .login-container hr {
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .login-container form {
@@ -219,7 +291,7 @@ input[type="password"] {
 }
 
 .login-container label {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .login-container input[type="email"],
@@ -232,11 +304,12 @@ input[type="password"] {
 }
 
 .login-container button {
-  padding: 10px 15px;
+  padding: 9px 15px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 3px;
+  margin-top: 2vh;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -274,15 +347,15 @@ input[type="password"] {
   animation: fadeIn 1s ease;
 }
 
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: justify;
-}
-
-.about-container {
-  padding: 50px;
-  animation: fadeIn 1s ease;
+.about-bg {
+  height: 1000vh;
+  background: url(./utils/about-bg.jpg);
+  -webkit-filter: blur(33px);
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  background-color: white;
 }
 
 .about-content {
@@ -292,19 +365,19 @@ input[type="password"] {
 }
 
 .about-content h2 {
-  color: #333;
+  /* color: #333; */
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .about-content p {
-  color: #666;
+  /* color: #666; */
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
 .about-content h3 {
-  color: #333;
+  /* color: #333; */
   font-size: 1.8rem;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -315,7 +388,7 @@ input[type="password"] {
 }
 
 .benefits-list li {
-  color: #666;
+  /* color: #666; */
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 10px;
@@ -325,7 +398,37 @@ input[type="password"] {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
+}
+
+.arrow-container {
+  margin-top: 250px;
+}
+
+.arrow {
+  height: 55px;
+  width: 55px;
+}
+
+.divider {
+  width: 90%;
+  margin-top: 50px;
+  border: 1.4px solid black;
+}
+
+.editor-container {
+  margin-top: 130px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.editor-container textarea {
+  border-radius: 8px;
+}
+
+.editor-container h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

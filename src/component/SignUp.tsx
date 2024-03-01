@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import GoogleSignIn from './GoogleSignIn';
 import Navbar from './Navbar';
+import Video from './Video';
 const Signup = () => {
    const [formData, setFormData] = useState({
       username: '',
@@ -30,21 +30,10 @@ const Signup = () => {
       console.log('Signup form submitted:', formData);
    };
 
-   const handleGoogleSignup = () => {
-      console.log('Google signup initiated');
-   };
-
-   function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      console.log('Name: ' + profile.getName());
-      console.log('Image URL: ' + profile.getImageUrl());
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-   }
-
    return (
       <>
          <Navbar />
+         <Video/>
          <div className="signup-container">
             <h2>SignUp</h2>
             <hr />
@@ -65,9 +54,8 @@ const Signup = () => {
                   <label>Confirm Password:</label>
                   <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} />
                </div>
-               <button type="submit" className="submit-btn">SignUp</button>
+               <button type="submit" className="submit-btn">Create Account</button>
             </form>
-            <GoogleSignIn />
          </div>
       </>
    );
