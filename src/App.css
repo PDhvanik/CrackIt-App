@@ -413,6 +413,13 @@ input[type="password"] {
   width: 55px;
 }
 
+.arrow-button {
+  width: auto;
+  mix-blend-mode: darken;
+  border: 0px;
+  cursor: pointer;
+}
+
 .divider {
   width: 90%;
   margin-top: 50px;
@@ -423,6 +430,7 @@ input[type="password"] {
   margin-top: 130px;
   display: flex;
   justify-content: space-between;
+  animation: fadeIn 1s ease;
 }
 
 .editor-container textarea {
@@ -431,4 +439,10 @@ input[type="password"] {
 
 .editor-container h2 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.logout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,12 +1,16 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import GoogleSignIn from './GoogleSignIn';
 import Navbar from './Navbar';
 import Video from './Video';
+import { useNavigate } from 'react-router-dom';
+import userName from '../variables';
+import isloggedIn from '../variables';
 
 const Login = () => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
-
+   const navigate = useNavigate();
+   const username = userName;
    const handleEmailChange = (e) => {
       setEmail(e.target.value);
    };
@@ -15,22 +19,24 @@ const Login = () => {
       setPassword(e.target.value);
    };
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
       console.log('Logging in with:', { email, password });
-      setEmail('');
-      setPassword('');
+      const data = {
+         email: email,
+         password: password
+      }
+      await axios.post('/api/login', data).then((response) => {
+         username.userName = response.data.user.username;
+         isloggedIn.isloggedIn = true;
+         console.log(response);
+         alert("Logged in successfully!");
+         navigate('/');
+      }).catch((error) => { 
+         alert(`Error occured: ${error.response.data.error}`);
+         console.log(error);
+      })
    };
-   const handleGoogleSignup = () => {
-      console.log('Google signup initiated');
-   };
-   function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      console.log('Name: ' + profile.getName());
-      console.log('Image URL: ' + profile.getImageUrl());
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-   }
 
    return (
       <>
@@ -62,7 +68,6 @@ const Login = () => {
                </div>
                <button type="submit">Login</button>
             </form>
-            <GoogleSignIn />
          </div>
       </>
    );

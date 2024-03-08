@@ -1,12 +1,13 @@
-// import { useState } from 'react'
+import react from 'react'
 import './App.css'
-import Route from './routes/route'
+import Route from './routes/Route';
+
 
 function App() {
 
   return (
     <>
-      <Route />
+      <Route/>
     </>
 
 

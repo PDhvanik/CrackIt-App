@@ -1,7 +1,11 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Video from './Video';
+import { useNavigate } from 'react-router-dom';
 const Signup = () => {
+   const navigate = useNavigate();
+
    const [formData, setFormData] = useState({
       username: '',
       email: '',
@@ -17,7 +21,7 @@ const Signup = () => {
       });
    };
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
       if (!formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
          alert('Please fill in all fields');
@@ -28,12 +32,24 @@ const Signup = () => {
          return;
       }
       console.log('Signup form submitted:', formData);
+
+      await axios({
+         method: 'post',
+         url: '/api/signup',
+         data: formData
+      }).then((response) => {
+         console.log(response);
+         alert('Signup successful!');
+         navigate("/login");
+      }).catch((e) => {
+         alert(`Error occures : ${e.response.data.error}`);
+      })
    };
 
    return (
       <>
          <Navbar />
-         <Video/>
+         <Video />
          <div className="signup-container">
             <h2>SignUp</h2>
             <hr />
@@ -48,11 +64,11 @@ const Signup = () => {
                </div>
                <div className="form-group">
                   <label>Password:</label>
-                  <input type="password" name="password" value={formData.password} onChange={handleChange} />
+                  <input type="password" name="password" value={formData.password} onChange={handleChange} autoComplete='password' />
                </div>
                <div className="form-group">
                   <label>Confirm Password:</label>
-                  <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} />
+                  <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} autoComplete='confirmPassword' />
                </div>
                <button type="submit" className="submit-btn">Create Account</button>
             </form>

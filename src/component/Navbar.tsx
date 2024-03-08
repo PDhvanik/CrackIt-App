@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import useScreenSize from '../hooks/useScreenSize';
 import { NavLink } from 'react-router-dom';
+import useScreenSize from '../hooks/useScreenSize';
+import userName from '../variables';
+import isloggedIn from '../variables';
 
 const Navbar = () => {
    const [isOpen, setIsOpen] = useState(false);
-
+   const username = userName;
    const openNav = () => {
       setIsOpen(true);
    };
@@ -12,13 +14,16 @@ const Navbar = () => {
    const closeNav = () => {
       setIsOpen(false);
    };
+   const handleLogOut = () => {
+      isloggedIn.isloggedIn = false;
+   };
    const screenSize = useScreenSize();
-
    useEffect(() => {
       if (screenSize.width > 768) {
          closeNav();
       }
    }, [screenSize.width]);
+
    return (
       <>
          <div className='nav-container'>
@@ -30,12 +35,17 @@ const Navbar = () => {
                   (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Topics</NavLink>
                <NavLink to='/about' style={({ isActive }) =>
                   (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>About</NavLink>
-               <div className="collab">
-                  <NavLink to='/login' style={({ isActive }) =>
-                     (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Login</NavLink>
-                  <NavLink to='/signup' style={({ isActive }) =>
-                     (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Signup</NavLink>
-               </div>
+               {(isloggedIn.isloggedIn) ? <div>
+                  <div className='logout-container'>
+                     <NavLink to='/login' onClick={handleLogOut}><div className='profile-name'>{username.userName}</div><i className="ri-logout-circle-line"></i>LogOut</NavLink>
+                  </div>
+               </div> :
+                  <div className="collab">
+                     <NavLink to='/login' style={({ isActive }) =>
+                        (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Login</NavLink>
+                     <NavLink to='/signup' style={({ isActive }) =>
+                        (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Signup</NavLink>
+                  </div>}
             </div>
             }
          </div>
