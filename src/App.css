@@ -4,7 +4,7 @@ body {
   text-align: center;
   /* color: #ccc; */
   /* position: relative; */
-  height: 300vh;
+  /* height: 300vh; */
   font-family: 'Nunito', sans-serif;
 }
 
@@ -87,7 +87,6 @@ body {
 
 .collab {
   display: flex;
-
 }
 
 .link-container {
@@ -96,6 +95,7 @@ body {
   align-items: center;
   margin: 1.5vw;
   padding: 1vw;
+  line-height: 1.2;
 }
 
 .nav-container a {
@@ -189,18 +189,23 @@ body {
 
 
 .signup-container {
-  width: 350px;
-  margin: 6vw auto;
-  padding: 20px;
+  width: 370px;
+  margin: 5vw auto;
+  padding: 27px;
   position: absolute;
   left: 17vw;
-  top: 5vh;
+  top: 2vh;
   border: 1px solid black;
   background-color: #333;
   color: #fff;
   border-radius: 10px;
   animation: fadeIn 1s ease;
   box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.1s ease-in-out;
+}
+
+.signup-container:hover {
+  transform: scale(1.03);
 }
 
 .signup-container h2 {
@@ -271,6 +276,11 @@ input[type="password"] {
   border-radius: 10px;
   animation: fadeIn 1s ease;
   box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.1s ease-in-out;
+}
+
+.login-container:hover {
+  transform: scale(1.04);
 }
 
 .login-container h2 {
@@ -446,4 +456,53 @@ input[type="password"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.pwd-container {
+  display: inline-block;
+  max-width: 450px;
+  height: 340px;
+  box-shadow: 10px 10px 10px #818181;
+  padding: 17px 35px 0px 34px;
+  transition: 0.1s ease-in-out;
+}
+
+.pwd-container:hover {
+  transform: scale(1.03);
+}
+
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.user-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+hr {
+  border: 1.2px solid black;
+}
+
+.btn-update:hover {
+  transform: scale(1.02);
+  color: white;
+  background-color: #3056af;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-cancel:hover {
+  transform: scale(1.02);
+  color: white;
+  background-color: #be4040;
+  transition: 0.2s ease-in-out;
+
 }

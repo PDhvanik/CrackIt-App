@@ -61,21 +61,27 @@ const Profile = () => {
       <>
          <Navbar />
          <div>
-            <h2>User Profile</h2>
-            <p>Username: {(userData) ? userData.username : ''}</p>
-            <p>Email: {userData ? userData.email : ''}</p>
-            <p>Problem Solved: {(userData) ? `${userData.problemSolved}` : ''}</p>
-            {(!isUpdatePassword) ? <div>
-               <button onClick={handleResetPassword}>Reset Password</button>
-            </div> :
-               <div>
-                  <p>Old Password:</p>
-                  <input type="password" value={oldPassword} onChange={e => setOldPassword(e.target.value)} />
-                  <p>New Password:</p>
-                  <input type="password" value={newPassword} onChange={e => setNewPassword(e.target.value)} />
-                  <button onClick={handleUpdatePassword}>Update Password</button>
-                  <button onClick={handleCancel}>Cancel</button>
-               </div>}
+            <h2 className='mt-2'>User Profile</h2>
+            <hr />
+            <div className="container">
+               <p className='d-flex fs-6 text-black fw-bold'>Username: {(userData) ? userData.username : ''}</p>
+               <p className='d-flex fs-6 text-black fw-bold'>Email: {userData ? userData.email : ''}</p>
+               <p className='d-flex fs-6 text-black fw-bold'>Problem Solved: {(userData) ? `${userData.problemSolved}` : ''}</p>
+               <hr />
+               {(!isUpdatePassword) ? <div>
+                  <button type='button' className='p-1 rounded-3 focus-ring' onClick={handleResetPassword}>Reset Password</button>
+               </div> :
+                  <div className='container border border-primary rounded-4 mt-2 pwd-container '>
+                     <p className=' fs-5'>Old Password:</p>
+                     <input type="password" className='border border-secondary' value={oldPassword} onChange={e => setOldPassword(e.target.value)} />
+                     <p className=' fs-5 '>New Password:</p>
+                     <input type="password" className='border border-secondary' value={newPassword} onChange={e => setNewPassword(e.target.value)} />
+                     <div className="user-btn">
+                        <button className='p-1 rounded-3 focus-ring btn-update' onClick={handleUpdatePassword}>Update Password</button>
+                        <button className='p-1 rounded-3 focus-ring btn-cancel' onClick={handleCancel}>Cancel</button>
+                     </div>
+                  </div>}
+            </div>
          </div>
       </>
    )
