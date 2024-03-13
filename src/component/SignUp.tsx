@@ -48,7 +48,7 @@ const Signup = () => {
 
    return (
       <>
-         <Navbar />
+         <Navbar/>
          <Video />
          <div className="signup-container">
             <h2>SignUp</h2>

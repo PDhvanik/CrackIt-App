@@ -7,12 +7,12 @@ import userName from '../variables';
 import isloggedIn from '../variables';
 
 const Login = () => {
-   const [email, setEmail] = useState('');
+   const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
    const navigate = useNavigate();
-   const username = userName;
+   const Username = userName;
    const handleEmailChange = (e) => {
-      setEmail(e.target.value);
+      setUsername(e.target.value);
    };
 
    const handlePasswordChange = (e) => {
@@ -21,18 +21,18 @@ const Login = () => {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log('Logging in with:', { email, password });
+      console.log('Logging in with:', { username, password });
       const data = {
-         email: email,
+         username: username,
          password: password
       }
       await axios.post('/api/login', data).then((response) => {
-         username.userName = response.data.user.username;
+         Username.userName = response.data.user.username;
          isloggedIn.isloggedIn = true;
          console.log(response);
          alert("Logged in successfully!");
          navigate('/');
-      }).catch((error) => { 
+      }).catch((error) => {
          alert(`Error occured: ${error.response.data.error}`);
          console.log(error);
       })
@@ -40,18 +40,18 @@ const Login = () => {
 
    return (
       <>
-         <Navbar />
+         <Navbar/>
          <Video />
          <div className='login-container'>
             <h2>Login</h2>
             <hr />
             <form onSubmit={handleSubmit}>
                <div>
-                  <label htmlFor="email">Email:</label>
+                  <label htmlFor="username">Username:</label>
                   <input
-                     type="email"
-                     id="email"
-                     value={email}
+                     type="text"
+                     id="username"
+                     value={username}
                      onChange={handleEmailChange}
                      required
                   />

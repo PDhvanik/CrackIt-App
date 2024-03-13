@@ -10,7 +10,7 @@ const HomePage = () => {
          <div className="video-bg-container">
             <video id="bubble-bg" className="video-bg" src='./src/utils/video/bg-video.mp4' loop autoPlay muted ></video>
          </div>
-         <Navbar />
+         <Navbar/>
          <Content />
          {/* <Footer/> */}
       </Suspense>
