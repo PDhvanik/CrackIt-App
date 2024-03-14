@@ -1,9 +1,7 @@
 import React from 'react'
+import ChatBot from './ChatBot'
 
 const Content = () => {
-   const handleScroll = () => {
-      
-   }
    return (
       <>
          <div className="top-heading">TEST YOUR</div>
@@ -11,18 +9,7 @@ const Content = () => {
             CODING
          </div>
          <div className="bottom-heading">SKILLS HERE</div>
-         <div className='arrow-container'>
-            <h2>Scroll down</h2>
-            <button className='arrow-button' onClick={handleScroll}><img src="./src/utils/arrow-down.png" className='arrow' alt="Arrow" /></button>
-         </div>
-         <hr className='divider' />
-         <div className="editor-container">
-            <div className='left-editor'>Questions here</div>
-            <div className="right-editor">
-               <h2>CODE EDITOR</h2>
-               <textarea name="CodeEditor" id="code-editor" cols={70} rows={10} placeholder='Write code here..'></textarea>
-            </div>
-         </div>
+         <ChatBot/>
       </>
    )
 }

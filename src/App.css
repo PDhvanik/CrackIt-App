@@ -506,3 +506,19 @@ hr {
   transition: 0.2s ease-in-out;
 
 }
+
+.chatbot-question {
+  width: 400px;
+  
+}
+
+.chatbot-answer {
+  width: 400px;
+  
+}
+.bot-container{
+  margin-top: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
