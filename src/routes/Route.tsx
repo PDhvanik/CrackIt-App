@@ -7,6 +7,7 @@ import LogIn from '../component/Login';
 import Navbar from '../component/Navbar';
 import SignUp from '../component/SignUp';
 import Profile from '../component/Profile';
+import ChatBot from '../component/ChatBot';
 const route = () => {
    return (
       <>
@@ -18,6 +19,7 @@ const route = () => {
                <Route path='/about' element={<About />} />
                <Route path='/loading' element={<Loading />} />
                <Route path='/profile' element={<Profile/>} />
+               <Route path='/chatbot' element={<ChatBot/>} />
             </Routes>
          </Router>
       </>

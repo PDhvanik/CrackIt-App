@@ -8,6 +8,19 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background:white;
+}
+::-webkit-scrollbar-thumb {
+  background:#007bff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* .blurred-bg {
   opacity: 0;
   -webkit-filter: blur(20px) brightness(0.7);
@@ -65,7 +78,7 @@ body {
 .logo {
   height: 32px;
   width: 120px;
-  margin-top: 27px;
+  margin-top: 30px;
   mix-blend-mode: screen;
 
   @media only screen and (max-width: 1000px) {
@@ -507,18 +520,57 @@ hr {
 
 }
 
-.chatbot-question {
-  width: 400px;
-  
+.bot-container {
+  margin-top: 20%;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color:gray;
+  border-radius: 10px;
+  color: white;
 }
 
-.chatbot-answer {
-  width: 400px;
-  
+.breakpoint {
+  display: flex;
+  /* justify-content: space-between; */
 }
-.bot-container{
-  margin-top: 30%;
+
+.area-and-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 100px;
+  flex-direction: column;
 }
+
+.area-and-btn textarea {
+  min-height: 100px;
+  width: 350px;
+  margin: 12px;
+}
+
+.area-and-btn button {
+  /* margin-top:-12px;   */
+  width: 50px;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.breakpoint img {
+  width: 2px;
+  height: auto;
+  margin-right: 40px;
+}
+
+.response-text {
+  margin-top: 40px;
+  margin-left: -73px;
+  text-align: left;
+}
+
+/* .response {
+  overflow-y: scroll;
+} */

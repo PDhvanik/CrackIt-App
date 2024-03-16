@@ -1,15 +1,13 @@
 import React from 'react'
 import ChatBot from './ChatBot'
+import GetStarted from './GetStarted'
+import Footer from './Footer'
 
 const Content = () => {
    return (
       <>
-         <div className="top-heading">TEST YOUR</div>
-         <div className='main-heading'>
-            CODING
-         </div>
-         <div className="bottom-heading">SKILLS HERE</div>
-         <ChatBot/>
+         <GetStarted/>
+         <Footer/>
       </>
    )
 }
