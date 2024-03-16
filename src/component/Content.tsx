@@ -6,8 +6,7 @@ import Footer from './Footer'
 const Content = () => {
    return (
       <>
-         <GetStarted/>
-         <Footer/>
+         <GetStarted />
       </>
    )
 }

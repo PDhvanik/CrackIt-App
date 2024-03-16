@@ -3,16 +3,16 @@ import Navbar from './Navbar'
 import axios from 'axios';
 import Loading from './Loading';
 import QuestionCard from './QuestionCard';
-interface Question{
+interface Question {
    title: string,
    description: string,
-   level:Number
+   level: Number
 }
 const Quetions = () => {
 
 
-   const [questionList, setQuestionList] = useState< Array<Question> | null>(null);
-   
+   const [questionList, setQuestionList] = useState<Array<Question> | null>(null);
+
    async function fetchQuetions() {
       await axios.get('/api/quetions').then((response) => {
          setQuestionList(response.data.Questions);
@@ -21,17 +21,17 @@ const Quetions = () => {
          alert(error.message);
       });
    }
-   useEffect(() => { 
+   useEffect(() => {
       fetchQuetions();
-   },[]);
-   
+   }, []);
+
    return (
       <>
          <Navbar />
-         <div>
+         <div className='my-[5vw]'>
             {(questionList) ? <ul>{
                questionList.map((question, index) => (
-                  <QuestionCard key={index } title={question.title} description={question.description} level={question.level} />
+                  <QuestionCard key={index} title={question.title} description={question.description} level={question.level} />
                ))
             }</ul> : <Loading />}
          </div>

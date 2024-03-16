@@ -9,6 +9,7 @@ import Profile from '../component/Profile';
 import ChatBot from '../component/ChatBot';
 import Questions from '../component/Questions';
 import SolveQuestion from '../component/SolveQuestion';
+import Footer from '../component/Footer';
 const route = () => {
    return (
       <>
@@ -25,6 +26,7 @@ const route = () => {
                <Route path='/solvequestion' element={<SolveQuestion />} />
             </Routes>
          </Router>
+         <Footer />
       </>
    )
 }

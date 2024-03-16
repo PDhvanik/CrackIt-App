@@ -2,7 +2,7 @@ import React from "react"
 import { NavLink } from "react-router-dom"
 export default () => {
     return (
-        <section className="p-16">
+        <section className="p-16 my-[5.2vw]">
             <div className="max-w-screen-xl mx-auto px-4 md:text-center md:px-8">
                 <div className="max-w-xl space-y-2 md:mx-auto font-serif">
                     <h3 className="text-gray-800 font-semibold">

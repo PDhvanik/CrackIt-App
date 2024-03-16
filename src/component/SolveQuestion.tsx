@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import { useLocation } from 'react-router'
 import axios from 'axios';
+import CodeEditor from './CodeEditor';
 interface Question{
    title: string,
    description: string,
@@ -26,7 +27,8 @@ const SolveQuestion = () => {
             <h3 className='text-xl my-2'>{question.title}</h3>
             <p className=''>{question.description}</p>
             <p className='text-md m-1'>{question.level.toString()}</p>
-         </div> :<></>}
+         </div> : <></>}
+         <CodeEditor/>
       </>
    )
 }

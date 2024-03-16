@@ -25,7 +25,6 @@ const About = () => {
                   Whether you're a seasoned software engineer looking to brush up on your skills or a newcomer preparing for your first technical interview, our platform offers the resources and support you need to succeed.
                </p>
             </div>
-            <Footer />
          </div>
       </>
    );
