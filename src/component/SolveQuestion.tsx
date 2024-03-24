@@ -3,10 +3,10 @@ import Navbar from './Navbar'
 import { useLocation } from 'react-router'
 import axios from 'axios';
 import CodeEditor from './CodeEditor';
-interface Question{
+interface Question {
    title: string,
    description: string,
-   level:Number
+   level: Number
 }
 const SolveQuestion = () => {
    const [question, setQuestion] = useState<Question | null>(null);
@@ -24,11 +24,12 @@ const SolveQuestion = () => {
       <>
          <Navbar />
          {(question) ? <div>
-            <h3 className='text-xl my-2'>{question.title}</h3>
-            <p className=''>{question.description}</p>
-            <p className='text-md m-1'>{question.level.toString()}</p>
+            <h3 className='text-2xl my-2'>{question.title}</h3>
+            <p className='text-lg text-left mx-3'> {`-->`} {question.description}</p>
+            <p className='text-lg m-1'>{question.level.toString()}</p>
          </div> : <></>}
-         <CodeEditor/>
+         <hr />
+         <CodeEditor />
       </>
    )
 }

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Username from '../variables';
 import Navbar from './Navbar';
+
 interface UserData {
    username: string;
    email: string;
@@ -60,25 +61,25 @@ const Profile = () => {
    return (
       <>
          <Navbar />
-         <div>
-            <h2 className='mt-2'>User Profile</h2>
+         <div className='mx-3 my-2 p-2'>
+            <h2 className='m-2 p-1 text-2xl'>User Profile</h2>
             <hr />
-            <div className="container">
-               <p className='d-flex fs-6 text-black fw-bold'>Username: {(userData) ? userData.username : ''}</p>
-               <p className='d-flex fs-6 text-black fw-bold'>Email: {userData ? userData.email : ''}</p>
-               <p className='d-flex fs-6 text-black fw-bold'>Problem Solved: {(userData) ? `${userData.problemSolved}` : ''}</p>
-               <hr />
-               {(!isUpdatePassword) ? <div>
-                  <button type='button' className='p-1 rounded-3 focus-ring' onClick={handleResetPassword}>Reset Password</button>
+            <div className=" flex flex-col  p-4 my-3 text-xl border-2 border-black rounded-xl w-96 h-64 ">
+               <p className='text-black '>Username: {(userData) ? userData.username : ''}</p>
+               <p className='text-black '>Email: {userData ? userData.email : ''}</p>
+               <p className='text-black mb-2'>Problem Solved: {(userData) ? `${userData.problemSolved}` : ''}</p>
+               {/* <hr/> */}
+               {(!isUpdatePassword) ? <div className='mt-4 flex justify-center items-center'>
+                  <button type='button' className='p-1 rounded-md text-white mt-2 focus-ring bg-indigo-600 hover:bg-blue-800' onClick={handleResetPassword}>Reset Password</button>
                </div> :
-                  <div className='container border border-primary rounded-4 mt-2 pwd-container '>
-                     <p className=' fs-5'>Old Password:</p>
-                     <input type="password" className='border border-secondary' value={oldPassword} onChange={e => setOldPassword(e.target.value)} />
-                     <p className=' fs-5 '>New Password:</p>
-                     <input type="password" className='border border-secondary' value={newPassword} onChange={e => setNewPassword(e.target.value)} />
-                     <div className="user-btn">
-                        <button className='p-1 rounded-3 focus-ring btn-update' onClick={handleUpdatePassword}>Update Password</button>
-                        <button className='p-1 rounded-3 focus-ring btn-cancel' onClick={handleCancel}>Cancel</button>
+                  <div className='mt-8 border-2 border-black rounded-xl mt-2 pwd-container p-3'>
+                     <p className=''>Old Password:</p>
+                     <input type="password" className='border-2 border-black' value={oldPassword} onChange={e => setOldPassword(e.target.value)} />
+                     <p className=''>New Password:</p>
+                     <input type="password" className='border-2 border-black' value={newPassword} onChange={e => setNewPassword(e.target.value)} />
+                     <div className="user-btn gap-8">
+                        <button className='p-1 rounded-lg focus-ring border-2 border-black btn-update' onClick={handleUpdatePassword}>Update Password</button>
+                        <button className='p-1 rounded-lg focus-ring border-2 border-black btn-cancel' onClick={handleCancel}>Cancel</button>
                      </div>
                   </div>}
             </div>
